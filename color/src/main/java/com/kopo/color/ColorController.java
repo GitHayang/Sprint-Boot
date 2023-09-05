@@ -1,0 +1,19 @@
+package com.kopo.color;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ColorController {
+
+	@GetMapping("/")
+	public String home() {
+		return "index";
+	}
+	
+    @GetMapping("/histories")
+    public String histories() {
+        return "histories";
+    }
+	
+}
