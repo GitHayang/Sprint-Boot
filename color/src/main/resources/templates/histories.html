@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="list.css" />
-        <title>Histories</title>
-        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script src="histories.js"></script>
-    </head>
-    <body>
-        <h1>LIST</h1>
-        <table class="list">
-            <thead>
-                <tr>
-                    <th>no</th><th>color code</th><th>created</th><th>delete</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        
-        <a href="/">go Home</a>
-    </body>
-    <script>
-		
-	</script>
+
+<head>
+	<link rel="stylesheet" href="list.css" />
+	<title>Histories</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="histories.js"></script>
+</head>
+
+<body>
+	<h1>LIST</h1>
+	<!-- 날짜 선택 드롭다운 목록 -->
+	<select id="dateSelect">
+		<option value="">Select a date</option>
+		<!-- 날짜 목록을 반복하여 옵션으로 추가 -->
+		<th:block th:each="date : ${dateList}">
+			<option th:value="${date}" th:text="${date}"></option>
+		</th:block>
+	</select>
+	<table class="list">
+		<thead>
+			<tr>
+				<th>no</th>
+				<th>color code</th>
+				<th>created</th>
+				<th>delete</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+
+	<a href="/">go Home</a>
+</body>
+<script>
+</script>
+
 </html>

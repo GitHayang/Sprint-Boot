@@ -15,6 +15,11 @@ $(function(){
     var blue = Math.floor(Math.random() * 256);
     li_elements.eq(i).css({'background-color': 'rgb(' + red + ',' + green + ',' + blue + ')'});
     li_elements.eq(i).html('<span class="code">#' + decimalToHex(red) + decimalToHex(green) + decimalToHex(blue) + '</span><br />' + '(' + red + ',' + green + ',' + blue + ')');
+        
+    // 글자색 설정
+    var brightness = (red + green + blue) / 3;
+    var textColor = brightness < 128 ? 'white' : 'black';
+    li_elements.eq(i).css('color', textColor);
   }
 });
 
@@ -28,3 +33,5 @@ $(document).on('click', '.content li', function(event){
     }
   });
 });
+
+

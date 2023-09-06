@@ -66,6 +66,26 @@ public class ApiController {
 	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("삭제 중 오류가 발생했습니다.");
 	    }
 	}
+	
+	@GetMapping("/dates")
+	public ResponseEntity<List<String>> getDateList() {
+	    DB db = new DB();
+	    List<Color> colorList = db.select(); // 모든 데이터 가져오기
+
+	    // 중복을 제거한 날짜 목록 생성
+	    List<String> dateList = new ArrayList<>();
+	    for (Color color : colorList) {
+	        String date = color.getCreated().substring(0, 10); // 'yyyy-MM-dd' 형식으로 추출
+	        if (!dateList.contains(date)) {
+	            dateList.add(date);
+	        }
+	    }
+
+	    return ResponseEntity.ok(dateList);
+	}
+
+
+
 
 
 
