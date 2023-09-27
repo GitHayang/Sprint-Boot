@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result Page</title>
+</head>
+<body>
+    <h1>Text Result:</h1>
+    <div th:text="${textResult}"></div>
+
+    <h1>Image:</h1>    
+    <img src="generated_image.png" alt="Received Image" />
+    <!-- Display error message if any -->
+    <div th:if="${error}" th:text="${error}"></div>
+</body>
+</html>
